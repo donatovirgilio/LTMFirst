@@ -14,11 +14,15 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/login_username_et"
+            android:inputType="textEmailAddress"
             android:hint="@string/mail_hint" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:id="@+id/login_pwd_et"
             android:hint="@string/pwd_hint" />
     </LinearLayout>
 
@@ -29,19 +33,12 @@
         android:layout_height="match_parent">
 
 
-        
-
-        <!--
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/icons"
-            android:text="@string/login"/> -->
 
         <Button
             style="@style/CustomButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:id="@+id/login_btn"
             android:text="LOGIN"
             />
 
