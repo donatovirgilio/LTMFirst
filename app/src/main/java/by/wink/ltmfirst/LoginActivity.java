@@ -1,6 +1,7 @@
 package by.wink.ltmfirst;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -20,22 +21,6 @@ public class LoginActivity extends Activity implements View.OnClickListener{
 
     Button loginBtn;
 
-    View.OnClickListener clickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            if(view.getId() == R.id.login_btn){
-
-                String username = usernameET.getText().toString();
-                String password = passwordET.getText().toString();
-                if(doLogin(username,password)){
-                    Toast.makeText(LoginActivity.this,getString(R.string.login_success),Toast.LENGTH_SHORT)
-                            .show();
-                }
-            }
-
-        }
-    };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,13 +30,14 @@ public class LoginActivity extends Activity implements View.OnClickListener{
         usernameET = (EditText) findViewById(R.id.login_username_et);
         passwordET = (EditText) findViewById(R.id.login_pwd_et);
         loginBtn = (Button) findViewById(R.id.login_btn);
-        
+
+
         loginBtn.setOnClickListener(this);
 
     }
 
 
-    private boolean doLogin(String username,String password){
+    private boolean doLogin(String username, String password){
 
         // do something
 
@@ -68,6 +54,10 @@ public class LoginActivity extends Activity implements View.OnClickListener{
             if (doLogin(username, password)) {
                 Toast.makeText(LoginActivity.this, getString(R.string.login_success), Toast.LENGTH_SHORT)
                         .show();
+                // explict intent : this Activity , ComponentName to create
+                Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                startActivity(intent);
+                finish();
             }
 
         }
