@@ -15,4 +15,5 @@
     <string name="send_mail">send mail</string>
     <string name="email">amine@wink.by</string>
     <string name="email_text">Hi, I\'m using this fantastic app</string>
+    <string name="info">info</string>
 </resources>

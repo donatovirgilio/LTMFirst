@@ -7,104 +7,13 @@
     android:layout_gravity="center"
     android:clipToPadding="false"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:id="@+id/main_layout">
 
-    <LinearLayout
+
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:background="@color/material_light_white"
-        android:elevation="8dp"
-        android:orientation="vertical"
-        android:padding="@dimen/material_component_cards_left_and_right_padding">
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/material_component_cards_primary_title_bottom_padding"
-            android:text="@string/title"
-            android:textSize="@dimen/material_typography_display1"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="start"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:layout_marginBottom="@dimen/material_component_cards_primary_title_bottom_padding"
-                android:text="@string/subtitle"
-                android:textSize="@dimen/material_typography_subheading" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:layout_weight="1"
-                android:text="07/05/1992" />
-
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/phone_numberTV"
-            android:textSize="@dimen/material_typography_title"
-            android:text="@string/phone" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/address_textView"
-            android:textSize="@dimen/material_typography_subheading"
-            android:text="@string/address"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/email_text_view"
-            android:textSize="@dimen/material_typography_subheading"
-            android:text="@string/email"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="end">
-
-            <Button
-                style="@style/Base.Widget.AppCompat.Button.Borderless"
-                android:layout_width="wrap_content"
-                android:id="@+id/send_mail_btn"
-                android:layout_height="wrap_content"
-                android:text="@string/send_mail"
-                android:textColor="@color/colorPrimaryDark" />
-
-            <Button
-                style="@style/Base.Widget.AppCompat.Button.Borderless"
-                android:layout_width="wrap_content"
-                android:id="@+id/share_btn"
-                android:layout_height="wrap_content"
-                android:text="@string/go"
-                android:textColor="@color/colorPrimaryDark" />
-
-            <Button
-                style="@style/Base.Widget.AppCompat.Button.Borderless"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/call_btn"
-                android:text="@string/call"
-                android:textColor="@color/colorPrimaryDark" />
-        </LinearLayout>
-
-
-    </LinearLayout>
-
+        android:id="@+id/business_cards_rv"
+        android:layout_height="match_parent"/>
 
 
 </LinearLayout>

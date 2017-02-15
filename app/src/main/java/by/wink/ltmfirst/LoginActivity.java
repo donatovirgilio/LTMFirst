@@ -19,6 +19,8 @@ public class LoginActivity extends Activity implements View.OnClickListener{
     EditText usernameET;
     EditText passwordET;
 
+    public static final String EMAIL_KEY = "email";
+
     Button loginBtn;
 
     @Override
@@ -30,6 +32,14 @@ public class LoginActivity extends Activity implements View.OnClickListener{
         usernameET = (EditText) findViewById(R.id.login_username_et);
         passwordET = (EditText) findViewById(R.id.login_pwd_et);
         loginBtn = (Button) findViewById(R.id.login_btn);
+
+        if(getIntent() != null){
+            if(getIntent().getAction().equals(Intent.ACTION_SEND)) {
+
+                usernameET.setText(getIntent().getStringExtra(Intent.EXTRA_TEXT));
+            }
+
+        }
 
 
         loginBtn.setOnClickListener(this);
@@ -56,6 +66,9 @@ public class LoginActivity extends Activity implements View.OnClickListener{
                         .show();
                 // explict intent : this Activity , ComponentName to create
                 Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                intent.putExtra(EMAIL_KEY,username);
+                intent.putExtra("age",1);
+
                 startActivity(intent);
                 finish();
             }
